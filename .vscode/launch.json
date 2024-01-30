@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: debug_train",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceRoot}/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {"CUDA_VISIBLE_DEVICES":"0"},
+            "args":[
+                "--dataset_root",
+                "./dataset/",
+                "--dataset_name",
+                "DuSR-Real",
+                "--use_tb_logger",
+                "--loss_Charbonnier",
+                // "--loss_perceptual",
+                // "--loss_adv",
+                
+                // "--resume",
+                // "weights/20240117_232231/snapshot/net_100000.pth",
+                // "--resume_optim",
+                // "weights/20240117_232231/snapshot/optimizer_G_100000.pth",
+                // "--resume_scheduler",
+                // "weights/20240117_232231/snapshot/scheduler_100000.pth",
+            ]
+        },
+
+        {
+            "name": "Python: debug_test",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceRoot}/test.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {"CUDA_VISIBLE_DEVICES":"0"},
+            "args":[
+
+            ]
+        },
+
+    ]
+}
